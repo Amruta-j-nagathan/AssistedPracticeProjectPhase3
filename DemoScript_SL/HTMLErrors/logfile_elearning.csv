@@ -1,0 +1,10 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1702112561048,1744,https://accounts.simplilearn.com/user/login?redirect_url=https%3A%2F%2Flms.simplilearn.com%2F,200,OK,Thread Group 1-1,text,true,,67287,644,1,1,https://accounts.simplilearn.com/user/login?redirect_url=https%3A%2F%2Flms.simplilearn.com%2F,1522,0,719
+1702112573058,1200,https://accounts.simplilearn.com/user/login,200,OK,Thread Group 1-1,text,true,,67998,1638,1,1,https://accounts.simplilearn.com/user/login,583,0,0
+1702112573058,583,https://accounts.simplilearn.com/user/login-0,302,Moved Temporarily,Thread Group 1-1,text,true,,564,900,1,1,https://accounts.simplilearn.com/user/login,583,0,0
+1702112573641,617,https://accounts.simplilearn.com/user/login-1,200,OK,Thread Group 1-1,text,true,,67434,738,1,1,https://accounts.simplilearn.com/user/login,404,0,0
+1702112574277,198,https://www.simplilearn.com/,200,OK,Thread Group 1-1,text,true,,313075,594,1,1,https://www.simplilearn.com/,107,0,81
+1702112590492,77,https://www.simplilearn.com/iitk-professional-certificate-course-ai-machine-learning,200,OK,Thread Group 1-1,text,true,,370980,657,1,1,https://www.simplilearn.com/iitk-professional-certificate-course-ai-machine-learning,25,0,0
+1702112597943,2264,https://lms.simplilearn.com/,200,OK,Thread Group 1-1,text,true,,892,599,1,1,https://lms.simplilearn.com/,2263,0,931
+1702112606118,1320,https://lms.simplilearn.com/,200,OK,Thread Group 1-1,text,true,,809,625,1,1,https://lms.simplilearn.com/,1320,0,0
+1702112619702,252,https://lms.simplilearn.com/session/logout,200,OK,Thread Group 1-1,text,true,,809,661,1,1,https://lms.simplilearn.com/session/logout,251,0,0
