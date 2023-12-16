@@ -1,0 +1,42 @@
+pm.test("Status code should be 200", function(){
+
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response time is less than 500ms", function(){
+
+    pm.expect(pm.response.responseTime).to.be.below(1000);
+});
+
+pm.test("Content-Type should be application/json", function(){
+
+    pm.response.to.have.header("Content-Type","application/json; charset=utf-8");
+
+
+});
+
+pm.test("Response body is valid JSON", function(){
+
+    pm.response.to.be.json;
+
+
+});
+
+
+pm.test("Check specific field existence", function(){
+
+    pm.expect(pm.response.json()).to.have.property("id");
+    pm.expect(pm.response.json()).to.have.property("node_id");
+    pm.expect(pm.response.json()).to.have.property("full_name");
+    pm.expect(pm.response.json()).to.have.property("private");
+
+
+});
+
+//How to fetch json response in variable 
+
+var resData = JSON.parse(responseBody);
+
+console.log(resData.id);
+console.log(resData.node_id);
+console.log(resData.name);

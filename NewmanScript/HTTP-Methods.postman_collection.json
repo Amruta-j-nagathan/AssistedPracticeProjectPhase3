@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "ff515f90-ae9d-4ad7-9061-60a32f2fa9c9",
+		"name": "HTTP-Methods",
+		"description": "This is the demo api documentation with HTTP methods.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31715036"
+	},
+	"item": [
+		{
+			"name": "GetMethod-Demo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{xapikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.postman.com/workspaces",
+					"protocol": "https",
+					"host": [
+						"api",
+						"postman",
+						"com"
+					],
+					"path": [
+						"workspaces"
+					]
+				},
+				"description": "This request is gives list of workspaces"
+			},
+			"response": []
+		},
+		{
+			"name": "PostMethod-Demo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" //chaining the request\r",
+							" //chaining with delete request and provide workflow id in next delete request\r",
+							" \r",
+							" var jsonData = pm.response.json();\r",
+							" console.log(jsonData.workspace.id);\r",
+							"pm.environment.set(\"workspace_id\", jsonData.workspace.id);\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							" console.log(jsonData.workspace.name);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{xapikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workspace\": {\r\n        \"name\": \"Workspace-{{$randomAlphaNumeric}}\",\r\n        \"type\": \"personal\",\r\n        \"visibility\": \"personal\",\r\n        \"description\": \"This workspace created from postman\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.postman.com/workspaces",
+					"protocol": "https",
+					"host": [
+						"api",
+						"postman",
+						"com"
+					],
+					"path": [
+						"workspaces"
+					]
+				},
+				"description": "you can create new workspace with this POST request."
+			},
+			"response": []
+		},
+		{
+			"name": "PutMethod-Demo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{xapikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workspace\": {\r\n        \"id\": \"7284aaf9-04fc-41c2-91d3-b803ca68084e\",\r\n        \"name\": \"Workspace-9-Updated\",\r\n        \"type\": \"personal\",\r\n        \"description\": \"This workspace created from postman\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.postman.com/workspaces/7284aaf9-04fc-41c2-91d3-b803ca68084e",
+					"protocol": "https",
+					"host": [
+						"api",
+						"postman",
+						"com"
+					],
+					"path": [
+						"workspaces",
+						"7284aaf9-04fc-41c2-91d3-b803ca68084e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OptionsMethod-Demo",
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{xapikey}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.postman.com/workspaces",
+					"protocol": "https",
+					"host": [
+						"api",
+						"postman",
+						"com"
+					],
+					"path": [
+						"workspaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HeadMethod-Demo",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{xapikey}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.postman.com/workspaces",
+					"protocol": "https",
+					"host": [
+						"api",
+						"postman",
+						"com"
+					],
+					"path": [
+						"workspaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteMethod-Demo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{xapikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.postman.com/workspaces/{{workspace_id}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"postman",
+						"com"
+					],
+					"path": [
+						"workspaces",
+						"{{workspace_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getReqPosts",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"title\": \"Updating with PUT method in postman-new-update with patch method\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/25",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserReq",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"username\": \"{{$randomUserName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"address\": {\r\n        \"street\": \"{{$randomStreetName}}\",\r\n        \"suite\": \"{{$randomStreetAddress}}\",\r\n        \"city\": \"{{$randomCity}}\",\r\n        \"zipcode\": \"{{$randomCountryCode}}\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserReq",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"Malay Parikh\",\r\n    \"username\": \"Bret\",\r\n    \"email\": \"Sincere@april.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kulas Light\",\r\n        \"suite\": \"Apt. 556\",\r\n        \"city\": \"Gwenborough\",\r\n        \"zipcode\": \"92998-3874\",\r\n        \"geo\": {\r\n            \"lat\": \"-37.3159\",\r\n            \"lng\": \"81.1496\"\r\n        }\r\n    },\r\n    \"phone\": \"1-770-736-8031 x56442\",\r\n    \"website\": \"hildegard.org\",\r\n    \"company\": {\r\n        \"name\": \"Romaguera-Crona\",\r\n        \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n        \"bs\": \"harness real-time e-markets\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "xapikey",
+			"value": "PMAK-657b263350cb3f00386a3a9b-b7d2f80329511182bc480ede9ce0f94133",
+			"type": "string"
+		}
+	]
+}

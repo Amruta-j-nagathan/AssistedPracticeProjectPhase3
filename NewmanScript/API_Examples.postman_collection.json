@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "12fc53c6-14fa-45f6-af9a-94b9be2b9e3c",
+		"name": "API_Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31715036"
+	},
+	"item": [
+		{
+			"name": "ListOfUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLDemo}}?page=1",
+					"host": [
+						"{{BaseURLDemo}}"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SingleUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLDemo}}/2",
+					"host": [
+						"{{BaseURLDemo}}"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ammu\",\r\n    \"job\": \"learner\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURLDemo}}",
+					"host": [
+						"{{BaseURLDemo}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURLDemo}}/2",
+					"host": [
+						"{{BaseURLDemo}}"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURLDemo}}/3",
+					"host": [
+						"{{BaseURLDemo}}"
+					],
+					"path": [
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "demouser23s@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tutorialsninja.com/demo/index.php?route=account/login",
+					"protocol": "https",
+					"host": [
+						"tutorialsninja",
+						"com"
+					],
+					"path": [
+						"demo",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/login"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

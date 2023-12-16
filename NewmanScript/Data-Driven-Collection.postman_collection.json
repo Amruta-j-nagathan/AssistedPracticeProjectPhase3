@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "f98b6021-96fd-4e15-8dfc-67b55146e80e",
+		"name": "Data-Driven-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31715036"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\":\"{{password}}\"\r\n}"
+				},
+				"url": {
+					"raw": "https://reqres.in/api/register",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginReqCSV",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"email\", \"\");\r",
+							"pm.environment.set(\"password\", \"\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tutorialsninja.com/demo/index.php?route=account/login",
+					"protocol": "https",
+					"host": [
+						"tutorialsninja",
+						"com"
+					],
+					"path": [
+						"demo",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/login"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginReqJSON",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"email\", \"\");\r",
+							"pm.environment.set(\"password\", \"\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tutorialsninja.com/demo/index.php?route=account/login",
+					"protocol": "https",
+					"host": [
+						"tutorialsninja",
+						"com"
+					],
+					"path": [
+						"demo",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/login"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

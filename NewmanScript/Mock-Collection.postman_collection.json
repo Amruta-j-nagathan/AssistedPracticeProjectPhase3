@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "7d06bc69-efeb-48bb-8e90-8a3764b5f66d",
+		"name": "Mock-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31715036"
+	},
+	"item": [
+		{
+			"name": "mockRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"email\": \"tracey.ramos@reqres.in\",\r\n    \"first_name\": \"Tracey\",\r\n    \"last_name\": \"Ramos\",\r\n    \"avatar\": \"https://reqres.in/img/faces/6-image.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://b98fcc18-29cc-4b7a-8904-dd20fdc8dbce.mock.pstmn.io/demowebsite",
+					"protocol": "https",
+					"host": [
+						"b98fcc18-29cc-4b7a-8904-dd20fdc8dbce",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"demowebsite"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

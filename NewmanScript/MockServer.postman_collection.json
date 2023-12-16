@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "2d8441f3-37ab-4c85-bca7-f509b3f2e4d8",
+		"name": "MockServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31715036"
+	},
+	"item": [
+		{
+			"name": "demowebsite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n            \"id\": 2,\n            \"email\": \"janet.weaver@reqres.in\",\n            \"first_name\": \"Janet\",\n            \"last_name\": \"Weaver\",\n            \"avatar\": \"https://reqres.in/img/faces/2-image.jpg\"\n        }"
+				},
+				"url": {
+					"raw": "{{url}}/demowebsite",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"demowebsite"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n            \"id\": 2,\n            \"email\": \"janet.weaver@reqres.in\",\n            \"first_name\": \"Janet\",\n            \"last_name\": \"Weaver\",\n            \"avatar\": \"https://reqres.in/img/faces/2-image.jpg\"\n        }"
+						},
+						"url": {
+							"raw": "{{url}}/demowebsite",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"demowebsite"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n            \"id\": 5,\n            \"email\": \"charles.morris@reqres.in\",\n            \"first_name\": \"Charles\",\n            \"last_name\": \"Morris\",\n            \"avatar\": \"https://reqres.in/img/faces/5-image.jpg\"\n        },\n        {\n            \"id\": 6,\n            \"email\": \"tracey.ramos@reqres.in\",\n            \"first_name\": \"Tracey\",\n            \"last_name\": \"Ramos\",\n            \"avatar\": \"https://reqres.in/img/faces/6-image.jpg\"\n        }"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://b98fcc18-29cc-4b7a-8904-dd20fdc8dbce.mock.pstmn.io"
+		}
+	]
+}
